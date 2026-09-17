@@ -1,0 +1,13 @@
+# Java
+*.class
+bin/
+out/
+target/
+build/
+
+# Archivos de entorno y credenciales
+.env
+.env.*
+
+# Archivos temporales
+*.log
