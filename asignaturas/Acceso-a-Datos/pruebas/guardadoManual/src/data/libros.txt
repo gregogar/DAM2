@@ -1,0 +1,4 @@
+1;el señor de los anillos
+2;harry potter
+3;rick y morty
+4;zero calcare
