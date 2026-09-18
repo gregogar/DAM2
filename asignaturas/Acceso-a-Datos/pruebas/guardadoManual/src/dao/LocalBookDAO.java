@@ -1,15 +1,21 @@
 package dao;
+import java.util.ArrayList;
 import java.util.List;
 import model.Book;
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.io.IOException;
 
 public class LocalBookDAO {
 
     String ruta;
     List<Book> libros;
+   
 
-    public LocalBookDAO(String ruta, List<Book> libros) {
+    public LocalBookDAO(String ruta) throws Exception {
         this.ruta = ruta;
-        this.libros = libros;
+        this.libros = new ArrayList<>();
+        loadData();
     }
 
     public void loadData()
