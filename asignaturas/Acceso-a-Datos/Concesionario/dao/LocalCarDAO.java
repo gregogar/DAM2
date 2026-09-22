@@ -8,4 +8,6 @@ import model.Car;
 
 public class LocalCarDAO implements CarDAO {
     
+
+    
 }

@@ -4,9 +4,9 @@ import java.util.List;
 import model.Car;
 
 public interface CarDAO {
-    void createCar(Car c);
+    public void createCar(Car c);
 
-    List<Car> getAll();
+    public List<Car> getAll();
 
-    String getBrand(String b);
+    public List<Car> getBrand(String b);
 }
