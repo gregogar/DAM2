@@ -1,0 +1,21 @@
+marca;modelo;year
+Audi;A3;2017
+BMW;Serie 3;2020
+Mercedes-Benz;Clase A;2019
+Volkswagen;Golf;2018
+SEAT;Leon;2021
+Toyota;Corolla;2022
+Ford;Focus;2016
+Renault;Clio;2020
+Peugeot;308;2019
+Hyundai;i30;2021
+Kia;Sportage;2022
+Nissan;Qashqai;2018
+Opel;Corsa;2017
+Mazda;CX-5;2020
+Honda;Civic;2019
+Volvo;XC60;2021
+Skoda;Octavia;2018
+Fiat;500;2016
+Citroen;C3;2022
+Dacia;Sandero;2023
