@@ -13,10 +13,11 @@ public class Main {
         String ficheroTexto = "data/data.txt";
         ProcessBuilder pb = new ProcessBuilder(archivoSh, ficheroTexto, palabra);
 
-        try {
-           
+        try ()) {
+        }{
+            
         } catch (Exception e) {
-            System.out.println("ERROR");
+            // TODO: handle exception
         }
     }
 }
