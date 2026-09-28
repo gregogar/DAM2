@@ -1,9 +1,7 @@
+// IO operators r-w
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,8 +22,10 @@ public class Main {
         // Proceso2 
         // ME HE QUEDADO AQUI HAY QUE HACER EL SEGUNDO PROCESO
         ProcessBuilder pb2 = new ProcessBuilder(comando2);
+        String salida2 = "";
+        BufferedReader br2 = null;
+        
 
-        ProcessBuilder pb2 = new ProcessBuilder();
         try {
             Process p1 = pb.start();
             InputStream input1 = p1.getInputStream();
@@ -42,5 +42,12 @@ public class Main {
                 br1.close();
             }
         }
-    }
+
+        try {
+            Process p2 = pb2.start();
+            
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
 }
