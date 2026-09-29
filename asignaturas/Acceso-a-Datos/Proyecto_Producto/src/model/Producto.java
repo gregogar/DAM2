@@ -6,7 +6,7 @@ public class Producto
     private double precio;
     private String nombre;
 
-    public Producto(int i, String n, double p,)
+    public Producto(int i, String n, double p)
     {
         this.id = i;
         this.precio = p;
