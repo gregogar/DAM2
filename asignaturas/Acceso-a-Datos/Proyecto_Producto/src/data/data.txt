@@ -1,0 +1,4 @@
+1;120;ordenador
+2;20;raton
+3;15;cable
+4;50;teclado
