@@ -1,0 +1,4 @@
+1;ordenador;1230
+2;raton;30
+3;teclado;50
+4;tele;200
