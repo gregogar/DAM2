@@ -4,8 +4,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MenuInteractivo {
-    
-    static List<Process> background_process = new ArrayList<>();
+
+    public static List<Process> background_process = new ArrayList<>();
 
     public static void main(String[] args) {
         boolean ok = true;
@@ -21,26 +21,30 @@ public class MenuInteractivo {
             switch (opc) {
                 case "1":
                     primerPlano();
-                break;
+                    break;
                 case "2":
                     segundoPlano();
-                break;
+                    break;
                 case "3":
                     verPIDs();
-                break;
-                default: 
-                ok = false; 
-                break;
+                    break;
+                case "4":
+                    cerrarTodo();
+                    ok = true;
+                    break;
+                default:
+                    ok = false;
+                    break;
             }
         }
     }
 
-    public static void primerPlano(){
+    public static void primerPlano() {
         ProcessBuilder pBuilder = new ProcessBuilder("ping", "www.google.es");
         pBuilder.inheritIO();
         try {
-            Process p = pBuilder.start(); 
-            System.out.println("[PID] : " + p.pid()); 
+            Process p = pBuilder.start();
+            System.out.println("[PID] : " + p.pid());
             p.waitFor();
             System.out.println("He terminado de dormir");
         } catch (IOException e) {
@@ -50,22 +54,47 @@ public class MenuInteractivo {
         }
     }
 
-     public static void segundoPlano(){
+    public static void segundoPlano() {
         ProcessBuilder pBuilder = new ProcessBuilder("ping", "www.google.es");
         try {
-            Process p = pBuilder.start();  
+            Process p = pBuilder.start();
             System.out.println("Iniciando -> [PID] : " + p.pid() + " status : " + p.isAlive());
             background_process.add(p);
         } catch (IOException e) {
             e.printStackTrace();
-        } 
+        }
     }
 
-    public static void verPIDs(){
+    public static void verPIDs() {
 
-        for (Process p : background_process){
-            System.out.println("[PID] : " + p.pid() + " status : " + p.isAlive()); 
+        for (Process p : background_process) {
+            System.out.println("[PID] : " + p.pid() + " status : " + p.isAlive());
         }
 
     }
+
+    public static void cerrarTodo() {
+        Iterator<Process> iterator = background_process.iterator();
+        while (iterator.hasNext()) {
+            Process p = iterator.next();
+            if (p.isAlive()) {
+                p.destroy();
+                iterator.remove();
+            }
+        }
+    }
+
+    public static void cerrarTodo2() {
+        for (Process p : background_process) {
+            if (p.isAlive()) {
+                try {
+                    System.out.println("esperando a que finalicen todos los procesos");
+                    p.waitFor();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
 }
