@@ -52,7 +52,7 @@ public class ProductoDAOTexto implements ProductoDAO {
                 String [] atributos = linea.split(patron);
                 if (atributos.length == 3){
                     Producto p = new Producto(
-                        Integer.parseInt(atributos[0]), 
+                        Integer.parseInt(atributos[0]),
                         atributos[1],
                         Double.parseDouble(atributos[2]) 
                     );

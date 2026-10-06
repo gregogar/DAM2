@@ -7,7 +7,7 @@ import model.Producto;
 public class Main {
     public static void main(String[] args) throws Exception {
        
-        ProductoDAO dao = new ProductoDAOTexto("src\\bbdd.txt");
+        ProductoDAO dao = new ProductoDAOTexto("src/bbdd.bin");
         List<Producto> productos = dao.listarTodos();
         boolean ok = true;
 
@@ -37,7 +37,6 @@ public class Main {
                 default:ok=false;break;
             }
         }
-        
         dao.guardarTodos(productos);
     }
 }
