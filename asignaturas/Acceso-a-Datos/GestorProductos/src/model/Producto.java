@@ -3,6 +3,7 @@ import java.io.Serializable;
 
 public class Producto implements Serializable{
     
+    static final long serialVersionUID = 1L;
     Integer id;
     String nombre;
     Double precio;
