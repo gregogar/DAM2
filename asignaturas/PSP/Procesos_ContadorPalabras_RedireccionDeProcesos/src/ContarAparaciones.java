@@ -9,15 +9,16 @@ import java.io.OutputStreamWriter;
 public class ContarAparaciones {
     public static void main(String[] args) {
 
-        ProcessBuilder pBuilder = new ProcessBuilder("./contar_palabras.bat", "loreipsum.txt", "in");
+        ProcessBuilder pBuilder = new ProcessBuilder("src\\contar_palabras.bat", "loreipsum.txt", "in");
         pBuilder.redirectInput(new File("loreipsum.txt"));
         pBuilder.redirectOutput(new File("resultados.txt"));
 
-        try (
-                Process p = pBuilder.start();) {
+        try {
+            Process p = pBuilder.start();
             p.waitFor();
         } catch (Exception e) {
             System.out.println(e);
         }
+
     }
 }
