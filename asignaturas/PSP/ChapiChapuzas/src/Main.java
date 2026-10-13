@@ -31,17 +31,17 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    l = "es";
+                    l = "-es";
                     t = new Trabajo(srcPath, dstPath, l);
                     processText();
                     break;
                 case 2:
-                    l = "eng";
+                    l = "-en";
                     t = new Trabajo(srcPath, dstPath, l);
                     processText();
                     break;
                 case 3:
-                    l = "ita";
+                    l = "-it";
                     t = new Trabajo(srcPath, dstPath, l);
                     processText();
                     break;

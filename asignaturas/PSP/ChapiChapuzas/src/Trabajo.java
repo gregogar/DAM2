@@ -18,15 +18,15 @@ public class Trabajo {
     }
 
     public void processText() {
-        ProcessBuilder pb = new ProcessBuilder("cmd", "/c", this.bat1.toString(), this.srcPath.toString());
-        ProcessBuilder pb2 = new ProcessBuilder("cmd", "/c", bat2.toString());
+        ProcessBuilder pb = new ProcessBuilder("cmd", "/c", this.bat1.toString());
+        pb.redirectInput(srcPath.toFile());
+        ProcessBuilder pb2 = new ProcessBuilder("cmd", "/c", bat2.toString(), language);
         pb2.redirectOutput(dstPath.toFile());
         List<ProcessBuilder> processBuilders_list = List.of(pb, pb2);
         try {
             List<Process> process_list = ProcessBuilder.startPipeline(processBuilders_list);
-            for (Process p : process_list)
-                p.waitFor();
-            
+            Process last = process_list.getLast();
+            last.waitFor();            
         } catch (Exception e) {
             System.out.println("=============================================================");
             System.out.println("|| - [ERROR] - Input-Output Exception (ficheros corruptos) ||");
