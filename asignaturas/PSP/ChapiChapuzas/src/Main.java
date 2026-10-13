@@ -70,16 +70,15 @@ public class Main {
         System.out.println("|| Pulsa ENTER para corregir                               ||");
         System.out.println("=============================================================");
         sc.nextLine();
-        t.correctText();
+        t.processText();
 
         System.out.println("=============================================================");
         System.out.println("|| Pulsa ENTER para traducir                               ||");
         System.out.println("=============================================================");
         sc.nextLine();
-        t.translateText();
         System.out.println("=============================================================");
         System.out.println("|| Texto procesado correctamente.                           ||");
-        System.out.println("|| Puedes encontrarlo en:                                   ||");
+        System.out.println("|| Puedes encontrarlo en:" + dstPath.toAbsolutePath());
         System.out.println("=============================================================");
         System.out.println("|| Pulsa ENTER para volver al MENU principal                ||");
         System.out.println("||                                                          ||");
@@ -99,11 +98,6 @@ public class Main {
                 System.out.println("Error: introduce un número entero válido.");
             }
         }
-    }
-
-    public static Path getRutaAbsoluta()
-    {
-        return srcPath;
     }
 
     public static void limpiarTerminal() {
