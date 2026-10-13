@@ -1,4 +1,5 @@
 
+import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -19,7 +20,8 @@ public class Trabajo {
 
     public void processText() {
         ProcessBuilder pb = new ProcessBuilder("cmd", "/c", this.bat1.toString());
-        pb.redirectInput(srcPath.toFile());
+        File f = srcPath.toFile();
+        pb.redirectInput(f);
         ProcessBuilder pb2 = new ProcessBuilder("cmd", "/c", bat2.toString(), language);
         pb2.redirectOutput(dstPath.toFile());
         List<ProcessBuilder> processBuilders_list = List.of(pb, pb2);
